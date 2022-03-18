@@ -1,46 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'app.dart';
+import 'colors.dart';
+
 void main() {
-  runApp(
+  return runApp(
     const MaterialApp(
-      home: HomePage(),
+      home: Duwin(),
     ),
   );
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: AspectRatio(
-            aspectRatio: 539 / 114,
-            child: Image.asset(
-              'images/logo.png',
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(100)),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.search),
-            ),
-            const CircleAvatar(
-              backgroundImage: AssetImage('images/logo.png'),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.list),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+ThemeData buildDuwinTheme() {
+  final ThemeData base = ThemeData.light();
+  return base.copyWith(colorScheme: base.colorScheme.copyWith(
+    primary: duwinPink,
+    secondary: duwinOrange,
+    tertiary: duwinYellow;
+  ),);
 }
